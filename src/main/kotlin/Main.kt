@@ -7,6 +7,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.TextUnit
+import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
@@ -33,7 +35,7 @@ fun App(){
         Column(modifier = Modifier.padding(start = 15.dp, end = 15.dp)) {
             message.forEach{ message ->
                 Card(
-                    modifier = Modifier.size(width = 400.dp, height = 100.dp).padding(top = 15.dp),
+                    modifier = Modifier.size(width = 300.dp, height = 100.dp).padding(top = 15.dp),
                     backgroundColor = Color(0xffc6b1c9),
                     contentColor = Color.White,
                     elevation = 10.dp
@@ -52,6 +54,47 @@ fun App(){
                 }
             }
         }
+        Column(modifier = Modifier.padding(10.dp).fillMaxSize()) {
+            Text(
+                text = "Form",
+                modifier = Modifier
+                    .padding(top = 10.dp),
+                fontSize = TextUnit(value = 20f, type = TextUnitType.Sp)
+            )
+            OutlinedTextField(
+                value = "John Smith",
+                onValueChange = {},
+                placeholder = { Text("Type Name") },
+                label = { Text("Name") },
+                modifier = Modifier
+                    .padding(top = 10.dp)
+                    .fillMaxWidth()
+            )
+            OutlinedTextField(
+                value = body,
+                onValueChange = {},
+                placeholder = { Text("Type Body") },
+                label = { Text("Text") },
+                modifier = Modifier
+                    .padding(top = 10.dp)
+                    .weight(1f)
+                    .fillMaxWidth()
+            )
+            Button(
+                onClick = {},
+                modifier = Modifier
+                    .padding(top = 10.dp)
+                    .fillMaxWidth(),
+                colors = ButtonDefaults.buttonColors(
+                    backgroundColor = Color(0xffc6b1c9)
+                )
+            ){
+                Text(
+                    text = "Send",
+                    color = Color.White
+                )
+            }
+        }
     }
 }
 
@@ -59,7 +102,7 @@ fun main() = application {
     Window(
         onCloseRequest = ::exitApplication,
         title = "Tarea 1",
-        state = rememberWindowState()
+        state = rememberWindowState(width = 1000.dp, height = 600.dp)
     ){
         App()
     }

@@ -4,7 +4,7 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
 
 data class Message(val name: String, val message: String, val image: String)
-private val body = "awawghhtjyjy sr ar aigiawihaowf a iahwi aofaihdahwfio haifah iahwf"
+val body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
 val message = listOf<Message>(
     Message("Persona1 Apellido1", body, "img1.jpeg"),
